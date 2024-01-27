@@ -18,7 +18,7 @@ const Navbar = () => {
         setMenuOpen(!isMenuOpen)
     }
     return (
-        <header className='max-w-screen-2xl px-4 xl:px-28'>
+        <header className='max-w-screen-2xl px-4 xl:px-28 absolute top-0 right-0 left-0'>
             <nav className='container flex items-center justify-between md:py-4 pt-6 pb-3'>
             <FaSearch  className='hidden md:block text-black cursor-pointer w-5 h-5'/>
             <a href="#"><img src={logo}alt=" header logo" /></a>
@@ -28,8 +28,8 @@ const Navbar = () => {
             </div>
             {/* navbar sm device */}
            
-               <div onClick={toggleMenu}>
-                <button>
+               <div className='sm:hidden'>
+                <button onClick={toggleMenu}>
                     {
                     isMenuOpen ? <FaTimes className='h-5 w-5 text-black'/> : <FaBars className='h-5 w-5 text-black'/>
                     }
@@ -43,7 +43,19 @@ const Navbar = () => {
            <ul className='lg:flex items-center justify-between text-black hidden '>
                 {
                    navItems.map(({title,path})=>(
-                    <li className='hover:text-orange-500' key={title} >
+                    <li className='hover:text-[#52D3D8]' key={title} >
+                        <Link to={'/'}>{title}</Link>
+                    </li>
+                   ))
+                }
+            </ul>
+           </div>
+           {/* mobile menu */}
+           <div>
+           <ul className={`${isMenuOpen ? "" : "hidden"} bg-black px-4 py-2 rounded text-white`}>
+                {
+                   navItems.map(({title,path})=>(
+                    <li className='hover:text-orange-500 cursor-pointer my-3' key={title} >
                         <Link to={'/'}>{title}</Link>
                     </li>
                    ))
