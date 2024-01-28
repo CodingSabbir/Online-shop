@@ -3,3 +3,6 @@
 /* body{
     font-family: 'Roboto', sans-serif;
 } */
+.title{
+    @apply capitalize text-center text-3xl my-8 font-semibold;
+}
