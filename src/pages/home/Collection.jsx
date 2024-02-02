@@ -13,7 +13,7 @@ return (
                     wear collection exclusively offered at the
                     reopened Giorgio Armani boutique in Los
                     Angeles.</p>
-                    <button className='px-6 py-2 bg-white text-black font-semibold rounded-sm'>see collection</button>
+                    <button className='px-6 py-2 bg-white text-black font-semibold rounded-sm'>See Collection</button>
             </div>
 
         </div>

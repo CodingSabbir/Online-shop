@@ -4,6 +4,7 @@ import Cetegory from './Cetegory';
 import Product from './Product';
 import Collection from './Collection';
 import BestSeller from './BestSeller';
+import NewLatters from './NewLatters';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
           <Product/>
           <Collection/>
           <BestSeller/>
+          <NewLatters/>
         </div>
     );
 };
