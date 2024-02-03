@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Home from './pages/home/Home.jsx';
 import SingleProduct from './pages/home/singleProduct.jsx';
+import CreateAccount from './components/CreateAccount.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
           {
             path: "/shop/:id",
           element: <SingleProduct/>,
+          },
+          {
+            path: "/signin",
+          element: <CreateAccount/>,
           }
     ]
   },

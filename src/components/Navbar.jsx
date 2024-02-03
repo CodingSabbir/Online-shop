@@ -23,7 +23,7 @@ const Navbar = () => {
             <FaSearch  className='hidden md:block text-black cursor-pointer w-5 h-5'/>
             <a href="#"><img src={logo}alt=" header logo" /></a>
             <div className='sm:flex items-center gap-5 hidden text-lg text-black '>
-                <a href="#" className='flex items-center gap-2'><FaUser />Account</a>
+                <Link to={'/signin'}><a href="#" className='flex items-center gap-2'><FaUser />Account</a></Link>
                 <a href="#" className='flex items-center gap-2'><FaBagShopping />Shop</a>
             </div>
             {/* navbar sm device */}
