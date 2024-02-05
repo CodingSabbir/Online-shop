@@ -3,6 +3,9 @@ import { FaBars, FaSearch,FaTimes,FaUser  } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
 import logo from "../assets/img/logo (1).png"
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../frebase.Config';
+import { signOut } from '@firebase/auth';
 const Navbar = () => {
     const navItems=[
         {title:"Jewelry & Accessories",path:"/"},
@@ -17,15 +20,33 @@ const Navbar = () => {
     const toggleMenu=()=>{
         setMenuOpen(!isMenuOpen)
     }
+    // firebase auth
+    const [user]=useAuthState(auth)
+    // signOut function
+    const handleSignOut =()=>{
+        signOut(auth)
+    }
     return (
         <header className='max-w-screen-2xl px-4 xl:px-28 absolute top-0 right-0 left-0'>
             <nav className='container flex items-center justify-between md:py-4 pt-6 pb-3'>
             <FaSearch  className='hidden md:block text-black cursor-pointer w-5 h-5'/>
-            <a href="#"><img src={logo}alt=" header logo" /></a>
+           <Link to={'/'}> <a href="#"><img src={logo}alt=" header logo" /></a></Link>
             <div className='sm:flex items-center gap-5 hidden text-lg text-black '>
-                <Link to={'/signin'}><a href="#" className='flex items-center gap-2'><FaUser />Account</a></Link>
+               
+
+                {user 
+                ? (
+                    <button onClick={handleSignOut} className='flex items-center gap-2'>SignOut</button>
+                )
+                :
+                (
+                    <Link to={'/signIn'}><button  href="#" className='flex items-center gap-2'>SignIn</button></Link>
+                )
+                }
+                
                 <a href="#" className='flex items-center gap-2'><FaBagShopping />Shop</a>
             </div>
+           
             {/* navbar sm device */}
            
                <div className='sm:hidden'>

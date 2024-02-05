@@ -13,6 +13,9 @@ import {
 import Home from './pages/home/Home.jsx';
 import SingleProduct from './pages/home/singleProduct.jsx';
 import CreateAccount from './components/CreateAccount.jsx';
+import Login from './components/SignIn.jsx';
+import SignIn from './components/SignIn.jsx';
+import SignOut from './components/SignOut.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,9 +31,17 @@ const router = createBrowserRouter([
           element: <SingleProduct/>,
           },
           {
-            path: "/signin",
+            path: "/signUp",
           element: <CreateAccount/>,
-          }
+          },
+          {
+            path: "/signIn",
+          element: <SignIn/>,
+          },
+          // {
+          //   path: "/signOut",
+          // element: <SignOut/>,
+          // }
     ]
   },
 
