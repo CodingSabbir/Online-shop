@@ -12,7 +12,7 @@ const Navbar = () => {
         {title:"Clothing & Shoes",path:"/"},
         {title:"Home & Living",path:"/"},
         {title:"Wedding & Party",path:"/"},
-        {title:"Toys & Entertainment",path:"/"},
+        {title:"Blog-Site",path:"/blog"},
         {title:"Art & Collectibles",path:"/"},
         {title:"Craft Supplies & Tools",path:"/"},
     ]
@@ -27,7 +27,7 @@ const Navbar = () => {
         signOut(auth)
     }
     return (
-        <header className='max-w-screen-2xl px-4 xl:px-28 absolute top-0 right-0 left-0'>
+        <header className=' max-w-screen-2xl px-4 xl:px-28 absolute top-0 right-0 left-0'>
             <nav className='container flex items-center justify-between md:py-4 pt-6 pb-3'>
             <FaSearch  className='hidden md:block text-black cursor-pointer w-5 h-5'/>
            <Link to={'/'}> <a href="#"><img src={logo}alt=" header logo" /></a></Link>
@@ -60,12 +60,12 @@ const Navbar = () => {
             </nav>
             <hr />
             {/* category items */}
-           <div className='mt-4'>
+           <div className='mt-4 '>
            <ul className='lg:flex items-center justify-between text-black hidden '>
                 {
                    navItems.map(({title,path})=>(
-                    <li className='hover:text-[#52D3D8]' key={title} >
-                        <Link to={'/'}>{title}</Link>
+                    <li className=' hover:text-[#52D3D8]' key={title} >
+                        <Link to={path}>{title}</Link>
                     </li>
                    ))
                 }

@@ -16,6 +16,7 @@ import CreateAccount from './components/CreateAccount.jsx';
 import Login from './components/SignIn.jsx';
 import SignIn from './components/SignIn.jsx';
 import SignOut from './components/SignOut.jsx';
+import Blog from './pages/blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,10 +39,11 @@ const router = createBrowserRouter([
             path: "/signIn",
           element: <SignIn/>,
           },
-          // {
-          //   path: "/signOut",
-          // element: <SignOut/>,
-          // }
+          {
+            path: "/blog",
+          element: <Blog/>,
+          },
+        
     ]
   },
 

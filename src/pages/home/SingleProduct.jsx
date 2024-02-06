@@ -10,7 +10,7 @@ const SingleProduct = () => {
     const [quantity, setQuantity] = useState(1);
     useEffect(()=>{
         const fetchData = async()=>{
-         try{
+        try{
             const res = await fetch('/public/product.json')
             const data = await res.json();
             const filterProduct=data.filter((pd) =>pd.id == id)
@@ -42,7 +42,7 @@ const SingleProduct = () => {
         <div className='max-w-screen-2xl container mx-auto xl:px-28 px-4 mt-28'>
             <div className='max-w-7xl p-3 m-auto'>
                 <div>
-                    <a href="/" className='text-gery-300'>Home</a>
+                    <a href="/" className='text-gery-300'>Home </a>
                     <a href="/shop" className='text-black font-bold'>/ Shop</a>
                 </div>
                 <div className='mt-6 sm:mt-10'>

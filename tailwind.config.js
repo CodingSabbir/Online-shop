@@ -14,6 +14,7 @@ export default {
 
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
+        'serif': [ 'Open Sans',' sans-serif'],
       },
 
      
