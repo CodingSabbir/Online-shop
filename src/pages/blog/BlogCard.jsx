@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 
-const BlogCard = ({blogs}) => {
-   const filterBlog=blogs
-    return (
+const BlogCard = ({blogs,currentPage,selectCategory,pageSize}) => {
+   const filterBlog=blogs.filter((blogs)=> !selectCategory || blogs.category === selectCategory).slice((currentPage-1) * pageSize,currentPage * pageSize)
+    return ( 
         <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8'>
             {
                 filterBlog.map((blog)=>(
